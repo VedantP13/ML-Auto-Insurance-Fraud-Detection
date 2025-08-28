@@ -101,7 +101,12 @@ print(classification_report(y_test, y_pred))
 print("ROC-AUC:", roc_auc_score(y_test, y_prob))
 
 # -------------------------
-# Save model
+# Save model + features
 # -------------------------
 joblib.dump(pipe, MODELS_DIR / "pipeline.pkl")
 print(f"✅ Saved pipeline to {MODELS_DIR / 'pipeline.pkl'}")
+
+# Save the exact feature list after engineering
+all_cols = X.columns.tolist()
+joblib.dump(all_cols, MODELS_DIR / "engineered_feature_columns.pkl")
+print(f"✅ Saved feature list to {MODELS_DIR / 'engineered_feature_columns.pkl'}")
