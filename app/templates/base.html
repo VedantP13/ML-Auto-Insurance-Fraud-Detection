@@ -1,0 +1,45 @@
+<!-- base.html (white glassmorphism minimal) -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Auto Insurance Fraud Detection</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://unpkg.com/lucide@latest"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<style>
+.glass {
+background: rgba(255, 255, 255, 0.7);
+backdrop-filter: blur(12px) saturate(150%);
+-webkit-backdrop-filter: blur(12px) saturate(150%);
+border: 1px solid rgba(200, 200, 200, 0.3);
+box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+}
+input:focus, select:focus { outline: none; border-color: #4f46e5; box-shadow: 0 0 0 3px rgba(79,70,229,0.2);}
+</style>
+</head>
+<body class="bg-gray-100 text-gray-900 min-h-screen">
+<header class="border-b bg-white/80 backdrop-blur">
+<div class="max-w-6xl mx-auto px-6 py-5 flex items-center gap-4">
+<i data-lucide="shield-alert" class="w-7 h-7 text-indigo-600"></i>
+<h1 class="text-lg font-semibold">Auto Insurance Fraud Detection</h1>
+</div>
+</header>
+
+
+<main class="max-w-6xl mx-auto px-6 py-12">
+{% block content %}{% endblock %}
+</main>
+
+
+<footer class="border-t bg-white/80 backdrop-blur">
+<div class="max-w-6xl mx-auto px-6 py-6 text-sm text-gray-500">
+For demonstration purposes only. Not financial or underwriting advice.
+</div>
+</footer>
+
+
+<script>lucide.createIcons();</script>
+</body>
+</html>
